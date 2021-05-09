@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --project ./",
-    "start": "nodemon --config .nodemon.json src/server.ts",
+    "start": "cross-env NODE_ENV=development nodemon --config .nodemon.json src/server.ts",
     "debug": "nodemon --config .nodemon.json --inspect-brk src/server.ts",
     "prepare": "husky install"
   },
@@ -26,7 +26,15 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@types/compression": "^1.7.0",
+    "@types/morgan": "^1.9.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
